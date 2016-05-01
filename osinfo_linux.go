@@ -39,6 +39,7 @@ func init() {
 				releaseFiles = append(releaseFiles, f.Name())
 			}
 
+			// "/etc/os-release" is the special file with a lot of data. Try it first!
 			if f.Name() == "os-release" {
 				osReleaseFile = "/etc/os-release"
 			}
@@ -116,6 +117,7 @@ func version() string {
 
 func pretty() string {
 	if val, ok := distroInfo["PRETTY_NAME"]; ok {
+		// Get rid of the quotes surronding the string.
 		return strings.TrimSuffix(strings.TrimPrefix(val, "\""), "\"")
 	}
 

@@ -21,6 +21,7 @@ import (
 	"github.com/MiguelMoll/osinfo"
 )
 
+// Simple test app to display the OS information.
 func main() {
 
 	info := osinfo.Info{}

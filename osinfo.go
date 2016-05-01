@@ -30,6 +30,7 @@ func (i Info) String() string {
 	return fmt.Sprintf("Platform: %s\nKernel: %s\nArch: %s\nDistribution: %s\nVersion: %s\nPretty: %s", i.Platform, i.Kernel, i.Arch, i.Distribution, i.Version, i.Pretty)
 }
 
+// Collect grabs OS information with the OS specific functions.
 func Collect(i *Info) {
 
 	i.Platform = platform()
